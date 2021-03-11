@@ -7,12 +7,18 @@
         font-size: 3rem;
         text-decoration: underline;
         margin: 130px 0px 10vh;
+
+        transition: 0.5s ease;
+        transform: scale(0.1);
+        opacity: 0;
     }
 
     form {
         margin-bottom: 10vh;
         * {
             outline: none;
+
+            transition: 0.3s ease-out;
         }
         input {
             border: 0;
@@ -21,10 +27,16 @@
             height: 50px;
             width: 70%;
             border-radius: 2.5rem;
+
+            transform: translateY(10vh);
+            opacity: 0;
         }
         .text-send-wrapper {
             position: relative;
             width: 70%;
+
+            transform: translateY(10vh);
+            opacity: 0;
             textarea {
                 border: 0;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
@@ -47,6 +59,12 @@
                 cursor: pointer;
             }
         }
+
+        @for $i from 1 through 3 {
+            > :nth-child(#{$i}) {
+                transition-delay: calc(#{$i} * 0.1s);
+            }
+        }
     }
 
     .social-link-wrapper {
@@ -54,6 +72,30 @@
             cursor: pointer;
             width: 40px;
             margin-right: 30px;
+
+            transition: 0.6s ease;
+            transition-delay: 0.5s;
+            transform: scale(0);
+        }
+    }
+
+    &.in-view {
+        .title {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        form {
+            * {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .social-link-wrapper {
+            img {
+                transform: scale(1);
+            }
         }
     }
 }

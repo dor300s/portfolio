@@ -9,6 +9,10 @@
         text-decoration: underline;
         // margin-bottom: 100px;
         margin: 130px 0px;
+
+        transition: 0.5s ease;
+        transform: scale(0.1);
+        opacity: 0;
     }
     .main-content {
         // flex: 1;
@@ -22,11 +26,38 @@
             // width: 400px;
             height: 700px;
             // transform: translateY(50px);
+
+            transition: 0.3s ease;
+            transform: translateY(300px);
+            opacity: 0;
         }
         p {
             // margin:auto 0;
+            margin-left: 50px;
             white-space: pre-line;
             font-size: 1.2rem;
+
+            transition: 0.7s ease;
+            transform: scale(1, 0.5);
+            opacity: 0.1;
+        }
+    }
+
+    &.in-view {
+        .title {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .main-content {
+            img {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            p {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
     }
 }
