@@ -1,0 +1,91 @@
+.welcome-page-container {
+    height: 100vh;
+    // position: relative;
+    .content-wrapper {
+        height: 100%;
+        width: 90%;
+        .greet {
+            transition: 1s ease;
+            transform: translateY(150px);
+            opacity: 0;
+            h4 {
+                font-size: 3rem;
+                .name {
+                    color: $eclr2;
+                }
+            }
+            h3 {
+                font-size: 4rem;
+                color: $eclr1;
+                transition: 1s ease;
+                transition-delay: 0.5s;
+                opacity: 0;
+                transform: translateX(100px);
+            }
+        }
+        img {
+            max-width: 460px;
+            transition: 1s ease;
+            transition-delay: .7s;
+            opacity: 0;
+            transform: rotateY(180deg) translateX(-150px);
+        }
+    }
+
+    // .circle {
+    //     position: absolute;
+    //     border-radius: 50%;
+    //     top: 0;
+    //     left: 0;
+    //     &.c1 {
+    //         width: 200px;
+    //         height: 200px;
+    //         border: 2px solid $eclr1;
+    //         transform: translate(100px, 50px);
+    //     }
+    //     &.c2 {
+    //         width: 50px;
+    //         height: 50px;
+    //         border: 2px solid $eclr2;
+    //         transform: translate(500px, 100px);
+    //     }
+    //     &.c3 {
+    //         width: 300px;
+    //         height: 300px;
+    //         border: 2px solid $eclr1;
+    //         transform: translate(1420px, -120px);
+    //     }
+    //     &.c4 {
+    //         width: 250px;
+    //         height: 250px;
+    //         border: 2px solid $eclr2;
+    //         transform: translate(400px, 720px);
+    //     }
+    // }
+
+    &.in-view {
+        .content-wrapper {
+            .greet {
+                transform: translateY(0);
+                opacity: 1;
+
+                h4 {
+                    .name {
+                        color: $eclr2;
+                    }
+                }
+                h3 {
+                    font-size: 4rem;
+                    color: $eclr1;
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            img {
+                max-width: 460px;
+                transform: rotateY(180deg) translateX(0);
+                opacity: 1;
+            }
+        }
+    }
+}

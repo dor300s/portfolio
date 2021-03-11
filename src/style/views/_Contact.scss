@@ -1,0 +1,59 @@
+.contact-page-container {
+    height: 100vh;
+    padding-top: 80px;
+
+    .title {
+        text-align: center;
+        font-size: 3rem;
+        text-decoration: underline;
+        margin: 130px 0px 10vh;
+    }
+
+    form {
+        margin-bottom: 10vh;
+        * {
+            outline: none;
+        }
+        input {
+            border: 0;
+            margin-bottom: 10px;
+            padding-left: 30px;
+            height: 50px;
+            width: 70%;
+            border-radius: 2.5rem;
+        }
+        .text-send-wrapper {
+            position: relative;
+            width: 70%;
+            textarea {
+                border: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+                    "Open Sans", "Helvetica Neue", sans-serif;
+                padding: 20px 30px;
+                width: 100%;
+                height: 20vh;
+                background-color: $clr6;
+                border-radius: 2.5rem;
+                resize: none;
+                overflow: hidden;
+            }
+            .send {
+                content: url("../../images/send.svg");
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                right: 25px;
+                bottom: 45px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .social-link-wrapper {
+        img {
+            cursor: pointer;
+            width: 40px;
+            margin-right: 30px;
+        }
+    }
+}

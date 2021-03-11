@@ -1,0 +1,68 @@
+.specialities-page-container {
+    height: 100vh;
+    padding: 80px;
+    .title {
+        // margin-top: 40px;
+        text-align: center;
+        font-size: 3rem;
+        text-decoration: underline;
+        margin-bottom: 110px;
+
+        transition: 0.5s ease;
+        transform: scale(.1);
+        opacity: 0;
+    }
+
+    .content-wrapper {
+        // height: 100%;
+        height: 400px;
+        .item-wrapper {
+            width: 400px;
+            img {
+                height: 200px;
+                margin-bottom: 40px;
+                
+                transition: 0.4s ease;
+                transform: scale(0.2);
+            }
+            h4 {
+                margin-bottom: 40px;
+                font-size: 1.5rem;
+
+                transition: 0.5s ease;
+                transition-delay: .1s;
+                opacity: 0;
+            }
+            p {
+                text-align: center;
+                white-space: pre-line;
+
+                transition: 0.5s ease;
+                transition-delay: .1s;
+                opacity: 0;
+            }
+        }
+    }
+
+    &.in-view {
+        .title {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .content-wrapper {
+            .item-wrapper {
+                img {
+                    transform: scale(1);
+                }
+                h4 {
+                    opacity: 1;
+                }
+                p {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// @keyframes title-animation{}

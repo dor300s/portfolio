@@ -1,0 +1,27 @@
+.nav-container {
+    height: 80px;
+    position: fixed;
+    width: calc(100vw - 400px);
+    // width: 100%;
+    // padding: 0 200px;
+    max-width: $normal-breakpoint;
+    z-index: 1;
+    background-color: $clr5;
+    h3 {
+        color: $eclr1;
+    }
+    .navlink-wrapper {
+        li {
+            margin-left: 40px;
+            list-style: none;
+            cursor: pointer;
+            color: $clr2;
+            transition: transform 0.3s;
+            &.active {
+                color: $eclr1;
+                font-weight: 700;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
