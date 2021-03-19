@@ -23,18 +23,18 @@ export const Portfolio = ({ currentPage }) => {
             <h3 className="title">PORTFOLIO</h3>
             <div className="projects-wrapper flex space-between">
 
-                <div className="project">
-                    <img src={TaskerrThumbnail}/>
+                <div className="project" >
+                    <img src={TaskerrThumbnail} onClick={() => window.open('https://taskerr-v1.herokuapp.com/')} />
                     <h4 className="label">Taskerr</h4>
                 </div>
 
                 <div className="project">
-                    <img src={NoticeThumbnail}/>
+                    <img src={NoticeThumbnail} onClick={() => window.open('https://app-notice.herokuapp.com/')}/>
                     <h4 className="label">Notice</h4>
                 </div>
 
                 <div className="project">
-                    <img src={IcryptoThumbnail}/>
+                    <img src={IcryptoThumbnail} onClick={() => window.open('https://nextjs-eight-wheat.vercel.app/')}/>
                     <h4 className="label">iCrypto</h4>
                 </div>
 

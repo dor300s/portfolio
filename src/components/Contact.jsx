@@ -6,7 +6,7 @@ import { observer } from '../services/observerService';
 
 
 export const Contact = ({ currentPage }) => {
-    const [mailForm, setMailForm] = useState({ name: '', email: '', text: '' });
+    const [mailMessage, setMailMessage] = useState({ subject: '', email: '', body: '' });
     const elRef = useRef();
 
     useEffect(() => {
@@ -21,24 +21,28 @@ export const Contact = ({ currentPage }) => {
 
     const handleChange = ({ target }) => {
         const { name, value } = target;
-        setMailForm(prev => ({ ...prev, [name]: value }));
-        console.log(mailForm);
+        setMailMessage(prev => ({ ...prev, [name]: value }));
+        console.log(mailMessage);
     }
+
+    const handleMail = () => {
+        window.open(`mailto:dor300s@gmail.com?subject=${mailMessage.subject}&body=${mailMessage.body}`);
+    }
+
     return (
         <div className="contact-page-container flex column" ref={elRef}>
             <h3 className="title">CONTACT</h3>
             <form onSubmit={(e) => e.preventDefault()} className="flex column align-center" onChange={handleChange}>
-                <input type="text" name="name" placeholder="name" />
+                <input type="text" name="subject" placeholder="subject" />
                 <input type="text" name="email" placeholder="email" />
                 <div className="text-send-wrapper">
-                    <textarea type="text" name="text" placeholder="text" /* cols="40" rows="5" */ />
-                    <button type="submit"></button>
-                    <div className="send"></div>
+                    <textarea type="text" name="body" placeholder="body" /* cols="40" rows="5" */ />
+                    <div className="send" onClick={handleMail} />
                 </div>
             </form>
             <div className="social-link-wrapper">
-                <img src={linkedinImage} alt="Linkedin" />
-                <img src={githubImage} alt="Github" />
+                <img src={linkedinImage} alt="Linkedin" onClick={() => window.open('https://www.linkedin.com/in/dor-ben-itzhak/')} />
+                <img src={githubImage} alt="Github" onClick={() => window.open('https://github.com/dor300s')} />
             </div>
         </div>
     )
