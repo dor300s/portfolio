@@ -6,7 +6,7 @@ import { observer } from '../services/observerService';
 
 
 export const Contact = ({ currentPage }) => {
-    const [mailMessage, setMailMessage] = useState({ subject: '', email: '', body: '' });
+    const [mailMessage, setMailMessage] = useState({ subject: '', body: '' });
     const elRef = useRef();
 
     useEffect(() => {
@@ -34,7 +34,6 @@ export const Contact = ({ currentPage }) => {
             <h3 className="title">CONTACT</h3>
             <form onSubmit={(e) => e.preventDefault()} className="flex column align-center" onChange={handleChange}>
                 <input type="text" name="subject" placeholder="subject" />
-                <input type="text" name="email" placeholder="email" />
                 <div className="text-send-wrapper">
                     <textarea type="text" name="body" placeholder="body" /* cols="40" rows="5" */ />
                     <div className="send" onClick={handleMail} />

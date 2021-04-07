@@ -1,9 +1,7 @@
 .dots-container {
-    // position: absolute;
-    // left: 30px;
     position: fixed;
     top: 50%;
-    right: 200px;
+    right: 20px;
     transform: translateY(-50%);
     .dot {
         height: 8px;
@@ -16,5 +14,8 @@
             background-color: $eclr1;
             transform: scale(1.4);
         }
+    }
+    @include for-normal-layout{
+        right: 200px;
     }
 }

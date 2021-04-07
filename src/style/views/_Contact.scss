@@ -60,7 +60,7 @@
             }
         }
 
-        @for $i from 1 through 3 {
+        @for $i from 1 through 2 {
             > :nth-child(#{$i}) {
                 transition-delay: calc(#{$i} * 0.1s);
             }

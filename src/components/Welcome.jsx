@@ -20,12 +20,12 @@ export const Welcome = ({ currentPage }) => {
 
     return (
         <div className="welcome-page-container" ref={elRef}>
-            <div className="content-wrapper flex align-center space-between">
+            <div className="content-wrapper flex column align-center">
                 <div className="greet">
                     <h4>Hi, I'm <span className="name">Dor Ben Itzhak</span></h4>
                     <h3>Full Stack Developer</h3>
                 </div>
-                <img src={HelloImg} />
+                    <img src={HelloImg} />
             </div>
             {/* <div className="circle c1"/>
             <div className="circle c2"/>

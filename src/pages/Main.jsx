@@ -16,7 +16,7 @@ export const Main = ({ currentPage }) => {
             <Specialities currentPage={currentPage} />
             <Portfolio currentPage={currentPage} />
             <About currentPage={currentPage} />
-            <Contact currentPage={currentPage} />
+            {/* <Contact currentPage={currentPage} /> */}
         </div>
     )
 }
