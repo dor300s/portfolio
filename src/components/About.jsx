@@ -19,10 +19,9 @@ export const About = ({ currentPage }) => {
     }, [currentPage])
 
     return (
-        <div className="about-page-container flex column space-between" ref={elRef}>
+        <div className="about-page-container flex column" ref={elRef}>
             <h3 className="title">ABOUT ME</h3>
-            <div className="main-content flex">
-                <img src={profilePicture} alt="#" />
+            <div className="main-content flex justify-center">
                 <p>{
                     `Junior Full Stack Web Developer, passionate about
                     solving challenges, Quick learner and hard-working individual,
@@ -30,6 +29,7 @@ export const About = ({ currentPage }) => {
                     Enthusiastic about developing my knowledge and learning
                     new technologies.`
                 }</p>
+                <img src={profilePicture} alt="#" />
             </div>
         </div>
     )

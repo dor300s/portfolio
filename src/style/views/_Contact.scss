@@ -1,12 +1,14 @@
 .contact-page-container {
-    height: 100vh;
-    padding-top: 80px;
+    height: 100%;
+    padding: 10vh 0 5vh;
+    @include for-narrow-layout {
+        padding: 15vh 0 10vh;
+    }
 
     .title {
         text-align: center;
         font-size: 3rem;
         text-decoration: underline;
-        margin: 130px 0px 10vh;
 
         transition: 0.5s ease;
         transform: scale(0.1);
@@ -14,10 +16,8 @@
     }
 
     form {
-        margin-bottom: 10vh;
         * {
             outline: none;
-
             transition: 0.3s ease-out;
         }
         input {
@@ -25,7 +25,7 @@
             margin-bottom: 10px;
             padding-left: 30px;
             height: 50px;
-            width: 70%;
+            width: 85%;
             border-radius: 2.5rem;
 
             transform: translateY(10vh);
@@ -33,7 +33,7 @@
         }
         .text-send-wrapper {
             position: relative;
-            width: 70%;
+            width: 85%;
 
             transform: translateY(10vh);
             opacity: 0;
@@ -43,7 +43,7 @@
                     "Open Sans", "Helvetica Neue", sans-serif;
                 padding: 20px 30px;
                 width: 100%;
-                height: 20vh;
+                height: 30vh;
                 background-color: $clr6;
                 border-radius: 2.5rem;
                 resize: none;

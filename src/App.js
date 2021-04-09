@@ -29,7 +29,7 @@ export const App = () => {
   }
 
   const handleTouch = (e) => {
-    if (e.changedTouches.length !== 1 || e.timeStamp - lastTs.current < 700 ) return;
+    if (e.changedTouches.length !== 1 || e.timeStamp - lastTs.current < 700) return;
     const { pageY } = e.changedTouches[0];
     if (e.type === 'touchstart') lastTouchY.current = e.changedTouches[0].pageY;
     else if (!lastTouchY.current) return;

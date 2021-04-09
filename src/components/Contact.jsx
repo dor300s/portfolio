@@ -30,7 +30,7 @@ export const Contact = ({ currentPage }) => {
     }
 
     return (
-        <div className="contact-page-container flex column" ref={elRef}>
+        <div className="contact-page-container flex column space-between" ref={elRef}>
             <h3 className="title">CONTACT</h3>
             <form onSubmit={(e) => e.preventDefault()} className="flex column align-center" onChange={handleChange}>
                 <input type="text" name="subject" placeholder="subject" />

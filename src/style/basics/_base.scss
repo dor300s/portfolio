@@ -34,6 +34,7 @@ html {
             background: #777;
         }
     }
+    height: 100%;
 }
 
 // img {
@@ -75,6 +76,6 @@ h6 {
     max-width: $normal-breakpoint;
 }
 .main-page-container {
-    height: 100vh;
+    // height: 100%;
     // width: 100%;
 }
