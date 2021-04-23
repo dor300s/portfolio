@@ -7,27 +7,25 @@ import { Contact } from '../components/Contact';
 import { Dots } from '../components/Dots';
 import { scrollToElement } from '../services/scrollService';
 
-
 export const Main = ({ currentPage }) => {
-
     const mainEl = useRef();
 
     useEffect(() => {
         window.addEventListener('resize', setContaierHeight);
 
-        return (() => window.removeEventListener('resize', setContaierHeight));
-    })
+        return () => window.removeEventListener('resize', setContaierHeight);
+    });
 
     useEffect(() => {
         if (mainEl.current) {
             mainEl.current.style.height = window.innerHeight + 'px';
         }
-    }, [mainEl.current, window.height])
+    }, [mainEl.current, window.height]);
 
     const setContaierHeight = () => {
         mainEl.current.style.height = window.innerHeight + 'px';
         scrollToElement();
-    }
+    };
 
     return (
         <div ref={mainEl} className="main-page-container">
@@ -38,5 +36,5 @@ export const Main = ({ currentPage }) => {
             <About currentPage={currentPage} />
             <Contact currentPage={currentPage} />
         </div>
-    )
-}
+    );
+};

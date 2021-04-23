@@ -10,6 +10,7 @@ export const Contact = ({ currentPage }) => {
     const elRef = useRef();
 
     useEffect(() => {
+
         if (elRef.current) observer.observe(elRef.current);
     }, [elRef.current])
 

@@ -19,34 +19,80 @@
         .projects-wrapper {
             flex: 1;
             @include for-narrow-layout {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
                 justify-content: space-between;
+                row-gap: 40px;
             }
             .project {
                 transition: 0.7s ease;
                 opacity: 0;
                 transform: rotateY(90deg);
                 display: none;
-                img {
-                    transition: 0.3s;
-                    box-shadow: 0px 0px 18px -6px rgba($color: $clr1, $alpha: 0.5);
-                    background-color: $clr6;
-                    width: calc(40px + 50vw);
-                    max-width: 300px;
-                    height: calc(40px + 50vw);
-                    max-height: 300px;
-                    border-radius: 1.8rem;
-                    object-fit: contain;
+                .project-content-wrapper {
+                    position: relative;
+                    background-color: $clr5;
+                    border-radius: 3rem;
                     margin-bottom: 20px;
                     @include for-narrow-layout {
+                        box-shadow: 0px 4px 18px -4px rgba($color: $clr1, $alpha:
+                                    0.2);
                         width: 20vw;
-                        max-width: 300px;
+                        max-width: 250px;
                         height: 20vw;
-                        max-height: 300px;
-
+                        max-height: 250px;
+                        transition: 0.3s;
                         &:hover {
-                            box-shadow: 0px 0px 18px -4px rgba($color: $clr1, $alpha: 0.7);
+                            transform: scale(1.1);
+                            background-color: $clr6;
                             cursor: pointer;
-                            transform: scale(1.07) translateY(-20px);
+                            img {
+                                cursor: pointer;
+                                transform: scale(1.2);
+                                opacity: 0;
+                            }
+                            p {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    img {
+                        transition: 0.3s;
+                        background-color: $clr6;
+                        width: calc(40px + 50vw);
+                        max-width: 300px;
+                        height: calc(40px + 50vw);
+                        max-height: 300px;
+                        border-radius: 3rem;
+                        object-fit: contain;
+                        @include for-narrow-layout {
+                            width: 20vw;
+                            max-width: 250px;
+                            height: 20vw;
+                            max-height: 250px;
+                        }
+                    }
+                    p {
+                        pointer-events: none;
+                        text-align: center;
+                        position: absolute;
+                        height: 20vh;
+                        transform: translateY(8vh);
+                        @include for-narrow-layout {
+                            transform: translateY(0);
+                            opacity: 0;
+                            height: 100%;
+                            top: 0;
+                            padding: 20px;
+                            transition: 0.5s ease;
+                        }
+                        span {
+                            font-size: 0.9rem;
+                            strong {
+                                font-size: 1rem;
+                                text-decoration: underline;
+                                margin-bottom: 5px;
+                            }
                         }
                     }
                 }
@@ -62,15 +108,15 @@
                     display: flex;
                 }
             }
-            @for $i from 1 through 3 {
+            @for $i from 1 through 6 {
                 > :nth-child(#{$i}) {
-                    transition-delay: calc(#{$i} * 0.2s);
+                    transition-delay: calc(#{$i} * 0.15s);
                 }
             }
         }
 
         .arrow {
-            width: 50px;
+            width: 40px;
             font-size: 1.5rem;
             content: url(../../images/next.svg);
             align-self: flex-end;
@@ -92,7 +138,10 @@
         .projects-wrapper {
             .project {
                 opacity: 1;
-                transform: rotateY(0);
+                transform: rotateY(0) translateY(-8vh);
+                @include for-narrow-layout {
+                    transform: rotateY(0);
+                }
             }
         }
     }
@@ -101,10 +150,10 @@
 @keyframes project-anim {
     from {
         transform: scale(0);
-        opacity: 0.1;
+        opacity: 0;
     }
     to {
-        transform: scale(1);
+        transform: scale(1) translateY(-8vh);
         opacity: 1;
     }
 }

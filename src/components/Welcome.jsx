@@ -25,7 +25,7 @@ export const Welcome = ({ currentPage }) => {
                     <h4>Hi, I'm <span className="name">Dor Ben Itzhak</span></h4>
                     <h3>Full Stack Developer</h3>
                 </div>
-                    <img src={HelloImg} />
+                <img src={HelloImg} />
             </div>
             {/* <div className="circle c1"/>
             <div className="circle c2"/>
