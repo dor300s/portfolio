@@ -37,7 +37,7 @@
             }
             img {
                 height: calc(20px + 14vw);
-                max-height: 300px;
+                max-height: 250px;
                 margin-bottom: 20px;
                 transition: 0.4s ease;
                 transform: scale(0.2);
@@ -60,6 +60,7 @@
                 transition: 0.5s ease;
                 transition-delay: 0.1s;
                 opacity: 0;
+                height: 10vw;
             }
         }
     }
