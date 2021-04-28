@@ -4,13 +4,17 @@ import backendImg from '../images/undraw_server_cluster_jwwq.svg';
 import responsiveImg from '../images/undraw_posting_photo_v65l.svg';
 import { observer } from '../services/observerService';
 import { scrollToElement } from '../services/scrollService';
+import { isSafari } from '../services/isSafariService';
 
 export const Specialities = ({ currentPage }) => {
     const [currItem, setCurrItem] = useState(1);
     const elRef = useRef();
 
     useEffect(() => {
-        if (elRef.current) observer.observe(elRef.current);
+        if (!elRef.current) return
+        if (!isSafari) observer.observe(elRef.current);
+        else  elRef.current.className += ' in-view';
+        // if (elRef.current) observer.observe(elRef.current);
     }, [elRef.current]);
 
     useEffect(() => {

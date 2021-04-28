@@ -1,13 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import HelloImg from '../images/undraw_Hello_qnas.svg';
+import { isSafari } from '../services/isSafariService';
 import { observer } from '../services/observerService';
 import { scrollToElement } from '../services/scrollService';
+
 
 export const Welcome = ({ currentPage }) => {
     const elRef = useRef();
 
     useEffect(() => {
-        if (elRef.current) observer.observe(elRef.current);
+        if (!elRef.current) return
+        if (!isSafari) observer.observe(elRef.current);
+        else  elRef.current.className += ' in-view';
+        // console.log(elRef.current.className += ' in-view');
     }, [elRef.current])
 
     useEffect(() => {

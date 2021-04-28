@@ -22,6 +22,7 @@ export const App = () => {
   }, []);
 
   const handleScroll = (e) => {
+    // e.preventDefault();
     if (e.timeStamp - lastTs.current < SUSPEND_TIME_MILISECONDS) return;
     const direction = e.deltaY > 0 ? 1 : -1;
     setCurrenPage((prev) =>

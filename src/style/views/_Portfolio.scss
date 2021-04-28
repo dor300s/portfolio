@@ -108,11 +108,11 @@
                     display: flex;
                 }
             }
-            @for $i from 1 through 6 {
-                > :nth-child(#{$i}) {
-                    transition-delay: calc(#{$i} * 0.15s);
-                }
-            }
+            // @for $i from 1 through 6 {
+            //     > :nth-child(#{$i}) {
+            //         transition-delay: calc(#{$i} * 0.15s);
+            //     }
+            // }
         }
 
         .arrow {
@@ -136,6 +136,13 @@
         }
 
         .projects-wrapper {
+            @include for-narrow-layout {
+                @for $i from 1 through 6 {
+                    > :nth-child(#{$i}) {
+                        transition-delay: calc(#{$i} * 0.15s);
+                    }
+                }
+            }
             .project {
                 opacity: 1;
                 transform: rotateY(0) translateY(-8vh);

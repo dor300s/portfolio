@@ -3,6 +3,7 @@ import { scrollToElement } from '../services/scrollService';
 import linkedinImage from '../images/linkedin.svg';
 import githubImage from '../images/github.svg';
 import { observer } from '../services/observerService';
+import { isSafari } from '../services/isSafariService';
 
 
 export const Contact = ({ currentPage }) => {
@@ -10,8 +11,10 @@ export const Contact = ({ currentPage }) => {
     const elRef = useRef();
 
     useEffect(() => {
-
-        if (elRef.current) observer.observe(elRef.current);
+        if (!elRef.current) return
+        if (!isSafari) observer.observe(elRef.current);
+        else elRef.current.className += ' in-view';
+        // if (elRef.current) observer.observe(elRef.current);
     }, [elRef.current])
 
     useEffect(() => {

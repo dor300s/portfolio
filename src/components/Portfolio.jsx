@@ -7,6 +7,7 @@ import IcryptoThumbnail from '../images/iCrypto_thumbnail.png';
 import DsignatureThumbnail from '../images/D-signature_thumbnail.png';
 import MyweatherThumbnail from '../images/My-weather_thumbnail.png';
 import BalliThumbnail from '../images/Balli_thumbnail.png';
+import { isSafari } from '../services/isSafariService';
 
 export const Portfolio = ({ currentPage }) => {
     const [currProject, setCurrProject] = useState(1);
@@ -14,7 +15,10 @@ export const Portfolio = ({ currentPage }) => {
     // const navSide = useRef();
 
     useEffect(() => {
-        if (elRef.current) observer.observe(elRef.current);
+        if (!elRef.current) return
+        if (!isSafari) observer.observe(elRef.current);
+        else  elRef.current.className += ' in-view';
+        // if (elRef.current) observer.observe(elRef.current);
     }, [elRef.current])
 
     useEffect(() => {

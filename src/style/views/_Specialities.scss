@@ -40,6 +40,7 @@
                 max-height: 250px;
                 margin-bottom: 20px;
                 transition: 0.4s ease;
+                transition-delay: .2s;
                 transform: scale(0.2);
                 // width: minmax(100px, 100%);
                 @include for-mobile-layout {
@@ -58,7 +59,7 @@
                 white-space: pre-line;
                 line-height: 1.5rem;
                 transition: 0.5s ease;
-                transition-delay: 0.1s;
+                transition-delay: 0.2s;
                 opacity: 0;
                 height: 10vw;
             }
