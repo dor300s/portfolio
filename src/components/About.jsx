@@ -25,7 +25,7 @@ export const About = ({ currentPage }) => {
       <h3 className="title">ABOUT ME</h3>
       <div className="main-content flex column justify-center align-center">
         <img src={profilePicture} alt="#" />
-        <p>{`Junior Full Stack Web Developer, passionate about
+        <p>{`Full Stack Web Developer, passionate about
              solving challenges, Quick learner and hard-working individual,
              Team player, Excellent analytical, Good communication skills.
              Enthusiastic about developing my knowledge and learning
