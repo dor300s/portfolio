@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MenuButton } from './MenuButton';
 import { Logo } from './Logo';
 
-export const NavBar = ({ currentPage, setCurrenPage }) => {
+export const NavBar = ({ currentPage, setCurrenPage, setLastPage }) => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const elNav = useRef();
     const currNavState = useRef();
@@ -22,6 +22,14 @@ export const NavBar = ({ currentPage, setCurrenPage }) => {
         target !== elNav.current && setIsNavOpen(false);
     }
 
+    const onNavClick = ({ target }) => {
+        const { value } = target;
+        setCurrenPage(prev => {
+            setLastPage(prev);
+            return value;
+        })
+    }
+
     return (
         <>
             <MenuButton isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
@@ -29,10 +37,10 @@ export const NavBar = ({ currentPage, setCurrenPage }) => {
                 {/* <h3>{'< Dor.Dev />'}</h3> */}
                 <Logo />
                 <ul ref={elNav} className={`navlink-wrapper flex column align-center ${isNavOpen ? 'active' : ''}`}>
-                    <li className={currentPage === 1 ? 'active' : ''} onClick={() => setCurrenPage(1)}>SPECIALITIES</li>
-                    <li className={currentPage === 2 ? 'active' : ''} onClick={() => setCurrenPage(2)}>PORTFOLIO</li>
-                    <li className={currentPage === 3 ? 'active' : ''} onClick={() => setCurrenPage(3)}>ABOUT ME</li>
-                    <li className={currentPage === 4 ? 'active' : ''} onClick={() => setCurrenPage(4)}>CONTACT</li>
+                    <li className={currentPage === 1 ? 'active' : ''} value={1} onClick={onNavClick}>SPECIALITIES</li>
+                    <li className={currentPage === 2 ? 'active' : ''} value={2} onClick={onNavClick}>PORTFOLIO</li>
+                    <li className={currentPage === 3 ? 'active' : ''} value={3} onClick={onNavClick}>ABOUT ME</li>
+                    <li className={currentPage === 4 ? 'active' : ''} value={4} onClick={onNavClick}>CONTACT</li>
                 </ul>
             </div>
         </>

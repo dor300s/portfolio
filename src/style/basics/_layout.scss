@@ -36,11 +36,11 @@
     }
 
     // @include for-normal-layout {
-        // grid-template-columns: 200px 1fr 200px;
-        // grid-template-columns:
-        //     minmax(20px, 1fr)
-        //     minmax(auto, $normal-breakpoint)
-        //     minmax(20px, 1fr);
+    // grid-template-columns: 200px 1fr 200px;
+    // grid-template-columns:
+    //     minmax(20px, 1fr)
+    //     minmax(auto, $normal-breakpoint)
+    //     minmax(20px, 1fr);
     // }
 
     > * {
@@ -56,3 +56,35 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
 }
+
+// Animations
+
+.transition-page-container {
+    height: 100%;
+
+    &.fade-enter {
+        position: absolute;
+        opacity: 0;
+        transform: translateY(var(--direction));
+        // transform: translateY(0) scale(.5);
+        overflow: hidden;
+    }
+    &.fade-enter-done {
+        transition: 0.5s ease-in-out;
+        opacity: 1;
+    }
+    &.fade-exit-active {
+        transition: 0.5s ease-in-out;
+        opacity: 0;
+        // transform: translateY(0);
+        transform: scale(.4) translateY(calc(var(--direction) * -5));
+    }
+    &.fade-exit-done {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+// transform: translateY(var(--direction));

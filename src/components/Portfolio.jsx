@@ -1,34 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { scrollToElement } from '../services/scrollService';
-import { observer } from '../services/observerService';
+import React, { useState } from 'react';
 import TaskerrThumbnail from '../images/Taskerr_thumbnail.png';
 import NoticeThumbnail from '../images/Notice_thumbnail.png';
 import IcryptoThumbnail from '../images/iCrypto_thumbnail.png';
 import DsignatureThumbnail from '../images/D-signature_thumbnail.png';
 import MyweatherThumbnail from '../images/My-weather_thumbnail.png';
 import BalliThumbnail from '../images/Balli_thumbnail.png';
-import { isSafari } from '../services/isSafariService';
 
-export const Portfolio = ({ currentPage }) => {
+
+export const Portfolio = () => {
     const [currProject, setCurrProject] = useState(1);
-    const elRef = useRef();
-    // const navSide = useRef();
-
-    useEffect(() => {
-        if (!elRef.current) return
-        if (!isSafari) observer.observe(elRef.current);
-        else  elRef.current.className += ' in-view';
-        // if (elRef.current) observer.observe(elRef.current);
-    }, [elRef.current])
-
-    useEffect(() => {
-        if (currentPage === 2) {
-            scrollToElement(elRef.current);
-        };
-    }, [currentPage])
 
     return (
-        <div className="portfolio-page-container flex column" ref={elRef}>
+        <div className="portfolio-page-container flex column" >
             <h3 className="title">PORTFOLIO</h3>
             <div className="projects-container flex align-center">
 

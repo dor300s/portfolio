@@ -1,27 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { scrollToElement } from "../services/scrollService";
+import React from "react";
 import profilePicture from "../images/Profile.png";
-import { observer } from "../services/observerService";
-import { isSafari } from "../services/isSafariService";
 
-export const About = ({ currentPage }) => {
-  const elRef = useRef();
-
-  useEffect(() => {
-    if (!elRef.current) return
-    if (!isSafari) observer.observe(elRef.current);
-    else elRef.current.className += ' in-view';
-    // if (elRef.current) observer.observe(elRef.current);
-  }, [elRef.current]);
-
-  useEffect(() => {
-    if (currentPage === 3) {
-      scrollToElement(elRef.current);
-    }
-  }, [currentPage]);
+export const About = () => {
 
   return (
-    <div className="about-page-container flex column" ref={elRef}>
+    <div className="about-page-container flex column">
       <h3 className="title">ABOUT ME</h3>
       <div className="main-content flex column justify-center align-center">
         <img src={profilePicture} alt="#" />

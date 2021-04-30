@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     position: relative;
-    padding: 10vh 0;
+    padding: 80px 0 10vh;
     @include for-narrow-layout {
         padding: 15vh 0 10vh;
     }
@@ -11,9 +11,10 @@
         text-align: center;
         font-size: 3rem;
         text-decoration: underline;
-        transition: 0.5s ease;
+        // transition: 0.5s ease;
         transform: scale(0.1);
         opacity: 0;
+        animation: title-anim 1s forwards;
     }
 
     .content-wrapper {
@@ -32,20 +33,18 @@
 
                 &.active-item {
                     display: flex;
-                    animation: item-anim 1s;
+                    animation: item-anim 0.5s;
                 }
             }
             img {
-                height: calc(20px + 14vw);
+                height: 40vw;
                 max-height: 250px;
                 margin-bottom: 20px;
-                transition: 0.4s ease;
-                transition-delay: .2s;
                 transform: scale(0.2);
-                // width: minmax(100px, 100%);
-                @include for-mobile-layout {
-                    // width: 70%;
-                    height: 40vw;
+                animation: scale1-anim 0.4s forwards;
+                @include for-narrow-layout {
+                    animation-delay: 0.4s;
+                    height: calc(20px + 14vw);
                 }
             }
 
@@ -58,10 +57,12 @@
                 text-align: center;
                 white-space: pre-line;
                 line-height: 1.5rem;
-                transition: 0.5s ease;
-                transition-delay: 0.2s;
                 opacity: 0;
-                height: 10vw;
+                animation: opacity1-anim 1s ease forwards;
+                @include for-narrow-layout {
+                    height: 10vw;
+                    animation-delay: 0.5s;
+                }
             }
         }
     }
@@ -94,33 +95,31 @@
             }
         }
     }
-
-    &.in-view {
-        .title {
-            transform: scale(1);
-            opacity: 1;
-        }
-        .content-wrapper {
-            .item-wrapper {
-                img {
-                    transform: scale(1);
-                }
-                h4 {
-                    opacity: 1;
-                }
-                p {
-                    opacity: 1;
-                }
-            }
-        }
-    }
 }
 
+@keyframes title-anim {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 @keyframes item-anim {
     from {
-        transform: scale(0.2) translateY(50%);
+        opacity: 0;
+        transform: scale(0.4);
     }
     to {
-        transform: scale(1) translateY(0);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes scale1-anim {
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes opacity1-anim {
+    to {
+        opacity: 1;
     }
 }
