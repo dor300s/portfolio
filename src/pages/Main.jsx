@@ -37,7 +37,7 @@ export const Main = ({ currentPage, lastPage }) => {
             <Dots currentPage={currentPage} />
             {PAGES.map((page, idx) => {
                 return (
-                    <CSSTransition in={currentPage === idx} timeout={200} classNames="fade" key={idx}>
+                    <CSSTransition in={currentPage === idx} timeout={300} classNames="fade" key={idx}>
                         <div className="transition-page-container" style={{ '--direction': currentPage > lastPage ? '20vh' : '-20vh' }}>
                             {/* {currentPage === idx ? page : <></>} */}
                             {/* {currentPage === idx ? cloneElement(page, { currentPage }) : <></>} */}
