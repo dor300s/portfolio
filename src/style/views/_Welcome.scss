@@ -28,7 +28,7 @@
             h4 {
                 font-size: 7vw;
                 @include for-narrow-layout {
-                    font-size: calc(2vw + 1rem);
+                    font-size: calc(1vw + 2rem);
                     white-space: nowrap;
                 }
                 .name {
@@ -43,7 +43,7 @@
                 animation: h3-anim 1s forwards;
                 animation-delay: 1s;
                 @include for-narrow-layout {
-                    font-size: calc(3vw + 1rem);
+                    font-size: calc(2vw + 2rem);
 
                     white-space: nowrap;
                 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import linkedinImage from '../images/linkedin.svg';
 import githubImage from '../images/github.svg';
+import whatsappImage from '../images/whatsapp.svg';
 
 export const Contact = () => {
     const [mailMessage, setMailMessage] = useState({ subject: '', body: '' });
@@ -28,6 +29,7 @@ export const Contact = () => {
             <div className="social-link-wrapper">
                 <img src={linkedinImage} alt="Linkedin" onClick={() => window.open('https://www.linkedin.com/in/dor-ben-itzhak/')} />
                 <img src={githubImage} alt="Github" onClick={() => window.open('https://github.com/dor300s')} />
+                <img src={whatsappImage} alt="Whatsapp" onClick={() => window.open('https://wa.me/972526716633')} />
             </div>
         </div>
     )
