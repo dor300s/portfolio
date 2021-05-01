@@ -62,7 +62,7 @@
 
         @for $i from 1 through 2 {
             > :nth-child(#{$i}) {
-                animation-delay: calc(.5s + #{$i} * 0.2s);
+                animation-delay: calc(.2s + #{$i} * 0.2s);
             }
         }
     }

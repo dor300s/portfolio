@@ -59,6 +59,11 @@
 
 // Animations
 
+.transition-container{
+    height: 100%;
+}
+
+
 .transition-page-container {
     height: 100%;
 
@@ -66,25 +71,25 @@
         position: absolute;
         opacity: 0;
         transform: translateY(var(--direction));
-        // transform: translateY(0) scale(.5);
         overflow: hidden;
     }
     &.fade-enter-done {
-        transition: 0.5s ease-in-out;
+        transform: translateY(0);
+        transition: 0.3s ease-out;
         opacity: 1;
     }
     &.fade-exit-active {
-        transition: 0.5s ease-in-out;
+        transition: 0.3s ease-in;
         opacity: 0;
-        // transform: translateY(0);
-        transform: scale(.4) translateY(calc(var(--direction) * -5));
+        transform: scale(0.5) translateY(calc(var(--direction) * -3));
+        @include for-narrow-layout {
+            transform: scale(0.5) translateY(calc(var(--direction) * -4.5));
+        }
     }
     &.fade-exit-done {
         display: none;
-        opacity: 0;
         position: absolute;
         width: 100%;
     }
 }
 
-// transform: translateY(var(--direction));

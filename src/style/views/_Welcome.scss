@@ -21,14 +21,15 @@
             width: 100%;
             margin-bottom: 15vh;
             animation: greet-anim 1s forwards;
-            animation-delay: .5s;
+            animation-delay: 0.5s;
             @include for-narrow-layout {
                 width: auto;
             }
             h4 {
                 font-size: 7vw;
                 @include for-narrow-layout {
-                    font-size: 3rem;
+                    font-size: calc(2vw + 1rem);
+                    white-space: nowrap;
                 }
                 .name {
                     color: $eclr2;
@@ -42,7 +43,9 @@
                 animation: h3-anim 1s forwards;
                 animation-delay: 1s;
                 @include for-narrow-layout {
-                    font-size: 4rem;
+                    font-size: calc(3vw + 1rem);
+
+                    white-space: nowrap;
                 }
             }
         }
