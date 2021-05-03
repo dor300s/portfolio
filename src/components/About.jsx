@@ -1,5 +1,5 @@
 import React from "react";
-import profilePicture from "../images/Profile.png";
+// import profilePicture from "../images/Profile.png";
 
 export const About = () => {
 
@@ -7,7 +7,7 @@ export const About = () => {
     <div className="about-page-container flex column">
       <h3 className="title">ABOUT ME</h3>
       <div className="main-content flex column justify-center align-center">
-        <img src={profilePicture} alt="#" />
+        <img alt="Profile image"/>
         <p>{`Full Stack Web Developer, passionate about
              solving challenges, Quick learner and hard-working individual,
              Team player, Excellent analytical, Good communication skills.
