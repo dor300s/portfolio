@@ -7,6 +7,9 @@ import { Contact } from '../components/Contact';
 import { Dots } from '../components/Dots';
 import { CSSTransition } from 'react-transition-group';
 
+
+
+
 const PAGES = [<Welcome />, <Specialities />, <Portfolio />, <About />, <Contact />];
 
 export const Main = ({ currentPage, lastPage }) => {
@@ -37,7 +40,7 @@ export const Main = ({ currentPage, lastPage }) => {
                 return (
                     <CSSTransition key={idx} in={currentPage === idx} timeout={300} classNames="fade" mountOnEnter >
                         <div
-                            className="transition-page-container"
+                            className={`transition-page-container`}
                             style={{ '--direction': currentPage > lastPage ? '20vh' : '-20vh' }}
                         >
                             {page}
