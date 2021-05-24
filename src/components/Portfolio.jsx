@@ -3,8 +3,9 @@ import TaskerrThumbnail from '../images/Taskerr_thumbnail.png';
 import NoticeThumbnail from '../images/Notice_thumbnail.png';
 import IcryptoThumbnail from '../images/iCrypto_thumbnail.png';
 import DsignatureThumbnail from '../images/D-signature_thumbnail.png';
-import MyweatherThumbnail from '../images/My-weather_thumbnail.png';
 import BalliThumbnail from '../images/Balli_thumbnail.png';
+import VisualSortThumbnail from '../images/Visual_sort_thumbnail.png';
+// import MyweatherThumbnail from '../images/My-weather_thumbnail.png';
 
 
 export const Portfolio = () => {
@@ -37,6 +38,24 @@ export const Portfolio = () => {
                     </div>
 
                     <div className={`project flex column align-center ${currProject === 2 ? 'active' : ''}`}>
+                        <div className="project-content-wrapper" onClick={() => window.open('https://visual-sort-v1.netlify.app/')}>
+                            <img src={VisualSortThumbnail} />
+                            <p className="flex column space-around">
+                                <i>Visualization of sorting algorithms: Bubble sort, Merge sort, Quick sort.</i>
+                                <span>
+                                    <strong>
+                                        Technologies used:
+                                    </strong>
+                                    <br />
+                                     React, Typescript, Material-ui.
+                                </span>
+                            </p>
+
+                        </div>
+                        <h4 className="label">Visual Sort</h4>
+                    </div>
+
+                    <div className={`project flex column align-center ${currProject === 3 ? 'active' : ''}`}>
                         <div className="project-content-wrapper" onClick={() => window.open('https://app-notice.herokuapp.com/')}>
                             <img src={NoticeThumbnail} />
                             <p className="flex column space-around">
@@ -54,7 +73,7 @@ export const Portfolio = () => {
                         <h4 className="label">Notice</h4>
                     </div>
 
-                    <div className={`project flex column align-center ${currProject === 3 ? 'active' : ''}`}>
+                    <div className={`project flex column align-center ${currProject === 4 ? 'active' : ''}`}>
                         <div className="project-content-wrapper" onClick={() => window.open('https://nextjs-eight-wheat.vercel.app/')}>
                             <img src={IcryptoThumbnail} />
                             <p className="flex column space-around">
@@ -72,7 +91,7 @@ export const Portfolio = () => {
                         <h4 className="label">iCrypto</h4>
                     </div>
 
-                    <div className={`project flex column align-center ${currProject === 4 ? 'active' : ''}`}>
+                    <div className={`project flex column align-center ${currProject === 5 ? 'active' : ''}`}>
                         <div className="project-content-wrapper" onClick={() => window.open('https://d-signature-app.herokuapp.com/')}>
                             <img src={DsignatureThumbnail} />
                             <p className="flex column space-around">
@@ -88,24 +107,6 @@ export const Portfolio = () => {
 
                         </div>
                         <h4 className="label">D-signature</h4>
-                    </div>
-
-                    <div className={`project flex column align-center ${currProject === 5 ? 'active' : ''}`}>
-                        <div className="project-content-wrapper" onClick={() => window.open('https://myweather-pwa.netlify.app/')}>
-                            <img src={MyweatherThumbnail} />
-                            <p className="flex column space-around">
-                                <i>The current weather in every city in the world and a picture of the place.</i>
-                                <span>
-                                    <strong>
-                                        Technologies used:
-                                    </strong>
-                                    <br />
-                                     React, Sass.
-                                </span>
-                            </p>
-
-                        </div>
-                        <h4 className="label">My Weather</h4>
                     </div>
 
                     <div className={`project flex column align-center ${currProject === 6 ? 'active' : ''}`}>
@@ -125,6 +126,25 @@ export const Portfolio = () => {
                         </div>
                         <h4 className="label">Balli</h4>
                     </div>
+
+                    {/* <div className={`project flex column align-center ${currProject === 5 ? 'active' : ''}`}>
+                        <div className="project-content-wrapper" onClick={() => window.open('https://myweather-pwa.netlify.app/')}>
+                            <img src={MyweatherThumbnail} />
+                            <p className="flex column space-around">
+                                <i>The current weather in every city in the world and a picture of the place.</i>
+                                <span>
+                                    <strong>
+                                        Technologies used:
+                                    </strong>
+                                    <br />
+                                     React, Sass.
+                                </span>
+                            </p>
+
+                        </div>
+                        <h4 className="label">My Weather</h4>
+                    </div> */}
+
 
                 </div>
 
